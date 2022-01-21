@@ -1,13 +1,10 @@
 import os, fnmatch
 import shutil
 import pandas as pd
-import config
-import datetime
+from init import config
 from datetime import date, timedelta
 
-from tools import wipe_out_directory
-from tools import get_input_list
-from tools import drop_df_duplicates
+from manage_list import tools
 
 def merge_csv_to_df(path, pattern):
     current_dir = os.getcwd()
@@ -29,9 +26,9 @@ def merge_csv_to_df(path, pattern):
     return df_frame
 
 def merge_list(input_files):
-    wipe_out_directory(config.OUTPUT_DIR_MERGED)
+    tools.wipe_out_directory(config.OUTPUT_DIR_MERGED)
 
-    list_files = get_input_list(input_files)
+    list_files = tools.get_input_list(input_files)
     # print(list_files)
 
     file_merge_list = []
@@ -43,7 +40,7 @@ def merge_list(input_files):
     # print(file_merge_list)
 
     df_merged = merge_csv_to_df(config.OUTPUT_DIR_MERGED, '*.csv')
-    df_merged = drop_df_duplicates(df_merged, "symbol")
+    df_merged = tools.drop_df_duplicates(df_merged, "symbol")
 
     filename = config.OUTPUT_DIR_RESULT + 'symbol_list_' + input_files
     df_merged.to_csv(filename)

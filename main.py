@@ -1,15 +1,11 @@
 import sys
 import pandas as pd
-import config
+from init import config
 
-from tools import mk_directories
-from tools import clean_up_df_symbol
-from list_manager import get_list
-from merging_csv import merge_list
-from scrap_profile import get_info_list
-from scrap_profile import refresh_database
-from fill_df_data import fill_df
-from scrap_isin import get_data_from_ISIN
+from manage_list import tools,list_manager
+from merging import merging_csv
+from compute_data import fill_df_data
+from scraping import scrap_profile
 
 sys.path.append("./compute_data/")
 sys.path.append("./manage_list/")
@@ -20,11 +16,6 @@ sys.path.append("./init/")
 """
     CSL module: Compute Symbol List
 """
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
@@ -37,22 +28,18 @@ if __name__ == '__main__':
     print(config.DATE)
 
     if(config.CLEAN_DATABASE == True):
-        clean_up_df_symbol(config.INPUT_FILE_IMPORTED_DATA)
-        clean_up_df_symbol(config.INPUT_FILE_IMPORTED_DATA_ISNI)
+        tools.clean_up_df_symbol(config.INPUT_FILE_IMPORTED_DATA)
+        tools.clean_up_df_symbol(config.INPUT_FILE_IMPORTED_DATA_ISNI)
 
-    mk_directories()
+    tools.mk_directories()
 
-    get_list()
+    list_manager.get_list()
 
     input_file = str(sys.argv[2])
     input_file = input_file[2:]
-    merge_list(input_file + '.csv')
+    merging_csv.merge_list(input_file + '.csv')
     if(config.FILL_DATA_FROM_DATABASE):
-        fill_df(input_file)
+        fill_df_data.fill_df(input_file)
     else:
         # FILL DATA FROM YAHOO FINANCE
-        refresh_database(input_file)
-
-
-    print_hi('PyCharm')
-
+        scrap_profile.refresh_database(input_file)

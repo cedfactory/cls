@@ -1,7 +1,6 @@
 import pandas as pd
-import config
-
-from scrap_wiki_list import make_df_stock_info
+from init import config
+from scraping import scrap_wiki_list
 
 def fill_df(input_file):
     filename = config.OUTPUT_DIR_RESULT + 'symbol_list_' + input_file + ".csv"
@@ -30,7 +29,7 @@ def fill_df(input_file):
 
     list_stock_dropped = []
     empty_lst = []
-    df_isni = make_df_stock_info(empty_lst, empty_lst, empty_lst, empty_lst, empty_lst, empty_lst, empty_lst)
+    df_isni = scrap_wiki_list.make_df_stock_info(empty_lst, empty_lst, empty_lst, empty_lst, empty_lst, empty_lst, empty_lst)
     for stock in list_stock_no_data:
         try:
             row_df_isni = df_isni_data.index.get_loc(df_isni_data.index[df_isni_data.index == stock][0])

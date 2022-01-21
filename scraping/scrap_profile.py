@@ -2,7 +2,7 @@ import pandas as pd
 from yahoo_fin import stock_info as si
 import yfinance as yf
 
-import config
+from init import config
 
 def get_info_list(df):
     list_stocks = df['symbol'].to_list()

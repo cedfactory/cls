@@ -1,6 +1,6 @@
-import os, fnmatch
+import os
 import pandas as pd
-import config
+from init import config
 
 def save_list(df, path, filename):
     filename = path + filename
