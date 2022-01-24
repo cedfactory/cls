@@ -17,7 +17,6 @@ sys.path.append("./init/")
     CSL module: Compute Symbol List
 """
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
 
     if (str(sys.argv[1]) == "--COLAB"):
