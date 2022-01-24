@@ -1,13 +1,13 @@
 # import re
 # from selenium import webdriver
 import pandas as pd
-import config
+from init import config
 
 from bs4 import BeautifulSoup
 import requests
 
 from yahoo_fin import stock_info as si
-from scrap_wiki_list import make_df_stock_info
+from scraping import scrap_wiki_list
 
 def get_list_NASDAQ():
     list_nasdaq = si.tickers_nasdaq()
@@ -20,7 +20,7 @@ def get_list_NASDAQ():
     list_country = ['' for i in range(len(list_nasdaq))]
     list_exchange = ['' for i in range(len(list_nasdaq))]
 
-    df = make_df_stock_info(list_nasdaq, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
+    df = scrap_wiki_list.make_df_stock_info(list_nasdaq, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
     return df
 
 def get_list_yahoo_SP500():
@@ -34,7 +34,7 @@ def get_list_yahoo_SP500():
     list_country = ['' for i in range(len(list_sp500))]
     list_exchange = ['' for i in range(len(list_sp500))]
 
-    df = make_df_stock_info(list_sp500, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
+    df = scrap_wiki_list.make_df_stock_info(list_sp500, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
     return df
 
 def get_list_DOW():
@@ -48,7 +48,7 @@ def get_list_DOW():
     list_country = ['' for i in range(len(list_dow))]
     list_exchange = ['' for i in range(len(list_dow))]
 
-    df = make_df_stock_info(list_dow, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
+    df = scrap_wiki_list.make_df_stock_info(list_dow, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
     return df
 
 def get_list_FTSE100():
@@ -62,7 +62,7 @@ def get_list_FTSE100():
     list_country = ['' for i in range(len(list_ftse))]
     list_exchange = ['' for i in range(len(list_ftse))]
 
-    df = make_df_stock_info(list_ftse, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
+    df = scrap_wiki_list.make_df_stock_info(list_ftse, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
     return df
 
 def get_list_FTSE250():
@@ -76,7 +76,7 @@ def get_list_FTSE250():
     list_country = ['' for i in range(len(list_ftse))]
     list_exchange = ['' for i in range(len(list_ftse))]
 
-    df = make_df_stock_info(list_ftse, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
+    df = scrap_wiki_list.make_df_stock_info(list_ftse, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
     return df
 
 def get_list_IBOVESPA():
@@ -90,7 +90,7 @@ def get_list_IBOVESPA():
     list_country = ['' for i in range(len(list_ibovespa))]
     list_exchange = ['' for i in range(len(list_ibovespa))]
 
-    df = make_df_stock_info(list_ibovespa, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
+    df = scrap_wiki_list.make_df_stock_info(list_ibovespa, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
     return df
 
 def get_list_NIFTY50():
@@ -104,7 +104,7 @@ def get_list_NIFTY50():
     list_country = ['' for i in range(len(list_nifty))]
     list_exchange = ['' for i in range(len(list_nifty))]
 
-    df = make_df_stock_info(list_nifty, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
+    df = scrap_wiki_list.make_df_stock_info(list_nifty, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
     return df
 
 def get_list_NIFTY_BANK():
@@ -118,7 +118,7 @@ def get_list_NIFTY_BANK():
     list_country = ['' for i in range(len(list_nifty))]
     list_exchange = ['' for i in range(len(list_nifty))]
 
-    df = make_df_stock_info(list_nifty, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
+    df = scrap_wiki_list.make_df_stock_info(list_nifty, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
     return df
 
 def get_list_EURONEXT():
@@ -137,7 +137,7 @@ def get_list_EURONEXT():
     list_industry = ['' for i in range(len(list_euronext))]
     list_sectors = ['' for i in range(len(list_euronext))]
 
-    df = make_df_stock_info(list_euronext, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
+    df = scrap_wiki_list.make_df_stock_info(list_euronext, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
     return df
 
 def get_list_undervalued():
@@ -152,7 +152,7 @@ def get_list_undervalued():
     list_country = ['' for i in range(len(list_undervalued))]
     list_exchange = ['' for i in range(len(list_undervalued))]
 
-    df = make_df_stock_info(list_undervalued, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
+    df = scrap_wiki_list.make_df_stock_info(list_undervalued, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
     return df
 
 def get_list_losers():
@@ -167,7 +167,7 @@ def get_list_losers():
     list_country = ['' for i in range(len(list_losers))]
     list_exchange = ['' for i in range(len(list_losers))]
 
-    df = make_df_stock_info(list_losers, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
+    df = scrap_wiki_list.make_df_stock_info(list_losers, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
     return df
 
 def get_list_gainers():
@@ -182,7 +182,7 @@ def get_list_gainers():
     list_country = ['' for i in range(len(list_gainers))]
     list_exchange = ['' for i in range(len(list_gainers))]
 
-    df = make_df_stock_info(list_gainers, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
+    df = scrap_wiki_list.make_df_stock_info(list_gainers, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
     return df
 
 def get_list_most_actives():
@@ -197,7 +197,7 @@ def get_list_most_actives():
     list_country = ['' for i in range(len(list_actives))]
     list_exchange = ['' for i in range(len(list_actives))]
 
-    df = make_df_stock_info(list_actives, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
+    df = scrap_wiki_list.make_df_stock_info(list_actives, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
 
     return df
 
@@ -219,7 +219,7 @@ def get_list_trending_tickers():
     list_country = ['' for i in range(len(list_trending))]
     list_exchange = ['' for i in range(len(list_trending))]
 
-    df = make_df_stock_info(list_trending, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
+    df = scrap_wiki_list.make_df_stock_info(list_trending, list_company_name, list_isin, list_sectors, list_industry, list_country, list_exchange)
 
     return df
 

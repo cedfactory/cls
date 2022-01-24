@@ -13,6 +13,10 @@ sys.path.append("./merging/")
 sys.path.append("./scraping/")
 sys.path.append("./init/")
 
+def _usage():
+    print("--COLAB CSL_EUROPE")
+
+
 """
     CSL module: Compute Symbol List
 """
@@ -35,7 +39,6 @@ if __name__ == '__main__':
     list_manager.get_list()
 
     input_file = str(sys.argv[2])
-    input_file = input_file[2:]
     merging_csv.merge_list(input_file + '.csv')
     if(config.FILL_DATA_FROM_DATABASE):
         fill_df_data.fill_df(input_file)
