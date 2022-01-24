@@ -1,4 +1,4 @@
-cls
+csl
 =
 
 [![Build](https://github.com/cedfactory/cls/actions/workflows/build.yml/badge.svg)](https://github.com/cedfactory/cls/actions)
