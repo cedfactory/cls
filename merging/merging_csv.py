@@ -25,10 +25,10 @@ def merge_csv_to_df(path, pattern):
 
     return df_frame
 
-def merge_list(input_files):
+def merge_list(input_file):
     tools.wipe_out_directory(config.OUTPUT_DIR_MERGED)
 
-    list_files = tools.get_input_list(input_files)
+    list_files = tools.get_input_list(config.INPUT_DIR + input_file)
     # print(list_files)
 
     file_merge_list = []
@@ -42,7 +42,7 @@ def merge_list(input_files):
     df_merged = merge_csv_to_df(config.OUTPUT_DIR_MERGED, '*.csv')
     df_merged = tools.drop_df_duplicates(df_merged, "symbol")
 
-    filename = config.OUTPUT_DIR_RESULT + 'symbol_list_' + input_files
+    filename = config.OUTPUT_DIR_RESULT + 'symbol_list_' + input_file
     df_merged.to_csv(filename)
 
 

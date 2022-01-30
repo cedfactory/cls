@@ -31,7 +31,7 @@ def wipe_out_directory(path):
         os.remove(os.path.join(path, f))
 
 def get_input_list(file):
-    df_input = pd.read_csv(config.INPUT_DIR + file)
+    df_input = pd.read_csv(file)
     df_input = df_input.set_index('files')
 
     list_files = []
