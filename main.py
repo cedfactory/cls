@@ -34,8 +34,6 @@ if __name__ == '__main__':
         tools.clean_up_df_symbol(config.INPUT_FILE_IMPORTED_DATA)
         tools.clean_up_df_symbol(config.INPUT_FILE_IMPORTED_DATA_ISNI)
 
-    tools.mk_directories()
-
     list_manager.get_list()
 
     input_file = str(sys.argv[2])

@@ -1,18 +1,5 @@
 import os
 import pandas as pd
-from init import config
-
-def save_list(df, path, filename):
-    filename = path + filename
-    df.to_csv(filename)
-
-def mk_directories():
-    ALL_DIRS = [config.OUTPUT_DIR, config.OUTPUT_DIR_DATE, config.OUTPUT_DIR_MERGED,
-        config.OUTPUT_DIR_RESULT, config.OUTPUT_DIR_MARKET, config.OUTPUT_DIR_EUROPE,
-        config.OUTPUT_DIR_US, config.OUTPUT_DIR_ASIA, config.OUTPUT_DIR_OTHERS]
-    for dir in ALL_DIRS:
-        if not os.path.exists(dir):
-            os.makedirs(dir)
 
 def wipe_out_directory(path):
     for f in os.listdir(path):
