@@ -7,24 +7,12 @@ def save_list(df, path, filename):
     df.to_csv(filename)
 
 def mk_directories():
-    if not os.path.exists(config.OUTPUT_DIR):
-        os.makedirs(config.OUTPUT_DIR)
-    if not os.path.exists(config.OUTPUT_DIR_DATE):
-        os.makedirs(config.OUTPUT_DIR_DATE)
-    if not os.path.exists(config.OUTPUT_DIR_MERGED):
-        os.makedirs(config.OUTPUT_DIR_MERGED)
-    if not os.path.exists(config.OUTPUT_DIR_RESULT):
-        os.makedirs(config.OUTPUT_DIR_RESULT)
-    if not os.path.exists(config.OUTPUT_DIR_MARKET):
-        os.makedirs(config.OUTPUT_DIR_MARKET)
-    if not os.path.exists(config.OUTPUT_DIR_EUROPE):
-        os.makedirs(config.OUTPUT_DIR_EUROPE)
-    if not os.path.exists(config.OUTPUT_DIR_US):
-        os.makedirs(config.OUTPUT_DIR_US)
-    if not os.path.exists(config.OUTPUT_DIR_ASIA):
-        os.makedirs(config.OUTPUT_DIR_ASIA)
-    if not os.path.exists(config.OUTPUT_DIR_OTHERS):
-        os.makedirs(config.OUTPUT_DIR_OTHERS)
+    ALL_DIRS = [config.OUTPUT_DIR, config.OUTPUT_DIR_DATE, config.OUTPUT_DIR_MERGED,
+        config.OUTPUT_DIR_RESULT, config.OUTPUT_DIR_MARKET, config.OUTPUT_DIR_EUROPE,
+        config.OUTPUT_DIR_US, config.OUTPUT_DIR_ASIA, config.OUTPUT_DIR_OTHERS]
+    for dir in ALL_DIRS:
+        if not os.path.exists(dir):
+            os.makedirs(dir)
 
 def wipe_out_directory(path):
     for f in os.listdir(path):
