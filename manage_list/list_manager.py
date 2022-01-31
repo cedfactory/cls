@@ -54,15 +54,15 @@ def get_list():
 
     if (config.GET_YAHOO == True):
         df_actives, df_trending, df_gainers, df_loosers, df_undervaluated = scrap_yahoo_list.get_list_YAHOO()
-        if df_actives != None:
+        if isinstance(df_actives, pd.DataFrame):
             df_actives.to_csv(config.OUTPUT_DIR_OTHERS+"ACTIVES.csv")
-        if df_trending != None:
+        if isinstance(df_trending, pd.DataFrame):
             df_trending.to_csv(config.OUTPUT_DIR_OTHERS+"TRENDING.csv")
-        if df_gainers != None:
+        if isinstance(df_gainers, pd.DataFrame):
             df_gainers.to_csv(config.OUTPUT_DIR_OTHERS+"GAINERS.csv")
-        if df_loosers != None:
+        if isinstance(df_loosers, pd.DataFrame):
             df_loosers.to_csv(config.OUTPUT_DIR_OTHERS+"LOOSERS.csv")
-        if df_undervaluated != None:
+        if isinstance(df_undervaluated, pd.DataFrame):
             df_undervaluated.to_csv(config.OUTPUT_DIR_OTHERS+"UNDERVALUATED.csv")
 
     if (config.GET_IBOVESPA == True):
