@@ -1,7 +1,7 @@
 import os
 from init import config
 from scraping import scrap_yahoo_list,scrap_wiki_list
-
+import pandas as pd
 
 def mk_directories():
     ALL_DIRS = [config.OUTPUT_DIR, config.OUTPUT_DIR_DATE, config.OUTPUT_DIR_MERGED,
@@ -54,11 +54,16 @@ def get_list():
 
     if (config.GET_YAHOO == True):
         df_actives, df_trending, df_gainers, df_loosers, df_undervaluated = scrap_yahoo_list.get_list_YAHOO()
-        df_actives.to_csv(config.OUTPUT_DIR_OTHERS+"ACTIVES.csv")
-        df_trending.to_csv(config.OUTPUT_DIR_OTHERS+"TRENDING.csv")
-        df_gainers.to_csv(config.OUTPUT_DIR_OTHERS+"GAINERS.csv")
-        df_loosers.to_csv(config.OUTPUT_DIR_OTHERS+"LOOSERS.csv")
-        df_undervaluated.to_csv(config.OUTPUT_DIR_OTHERS+"UNDERVALUATED.csv")
+        if df_actives != None:
+            df_actives.to_csv(config.OUTPUT_DIR_OTHERS+"ACTIVES.csv")
+        if df_trending != None:
+            df_trending.to_csv(config.OUTPUT_DIR_OTHERS+"TRENDING.csv")
+        if df_gainers != None:
+            df_gainers.to_csv(config.OUTPUT_DIR_OTHERS+"GAINERS.csv")
+        if df_loosers != None:
+            df_loosers.to_csv(config.OUTPUT_DIR_OTHERS+"LOOSERS.csv")
+        if df_undervaluated != None:
+            df_undervaluated.to_csv(config.OUTPUT_DIR_OTHERS+"UNDERVALUATED.csv")
 
     if (config.GET_IBOVESPA == True):
         df_IBOVESPA = scrap_yahoo_list.get_list_IBOVESPA()
@@ -66,6 +71,8 @@ def get_list():
 
     if (config.GET_NIFTY == True):
         df_NIFTY = scrap_yahoo_list.get_list_NIFTY50()
-        df_NIFTY.to_csv(config.OUTPUT_DIR_OTHERS+"NIFTY50.csv")
+        if isinstance(df_NIFTY, pd.DataFrame):
+            df_NIFTY.to_csv(config.OUTPUT_DIR_OTHERS+"NIFTY50.csv")
         df_NIFTY = scrap_yahoo_list.get_list_NIFTY_BANK()
-        df_NIFTY.to_csv(config.OUTPUT_DIR_OTHERS+"NIFTYBANK.csv")
+        if isinstance(df_NIFTY, pd.DataFrame):
+            df_NIFTY.to_csv(config.OUTPUT_DIR_OTHERS+"NIFTYBANK.csv")

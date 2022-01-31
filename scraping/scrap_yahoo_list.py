@@ -1,13 +1,26 @@
 # import re
 # from selenium import webdriver
 import pandas as pd
-from init import config
-
+from inspect import getframeinfo, stack
 from bs4 import BeautifulSoup
 import requests
-
 from yahoo_fin import stock_info as si
+
 from scraping import scrap_wiki_list
+from init import config
+
+def print_exception_info(exception):
+    caller = getframeinfo(stack()[2][0])
+    print("[{}:{}] - {}".format(caller.filename, caller.lineno, exception))
+
+def get_from_si(si_call):
+    df = None
+    try:
+        df = si_call()
+    except BaseException as exception:
+        print_exception_info(exception)
+
+    return df
 
 def get_list_NASDAQ():
     list_nasdaq = si.tickers_nasdaq()
@@ -94,7 +107,9 @@ def get_list_IBOVESPA():
     return df
 
 def get_list_NIFTY50():
-    list_nifty = si.tickers_nifty50()
+    list_nifty = get_from_si(si.tickers_nifty50)
+    if list_nifty == None:
+        return None
 
     list_sectors = ['' for i in range(len(list_nifty))]
     list_industry = ['' for i in range(len(list_nifty))]
@@ -141,7 +156,10 @@ def get_list_EURONEXT():
     return df
 
 def get_list_undervalued():
-    df_day_undervalued = si.get_undervalued_large_caps()
+    df_day_undervalued = get_from_si(si.get_undervalued_large_caps)
+    if df_day_undervalued == None:
+        return None
+
     list_undervalued = df_day_undervalued['Symbol'].tolist()
 
     list_sectors = ['' for i in range(len(list_undervalued))]
@@ -156,7 +174,10 @@ def get_list_undervalued():
     return df
 
 def get_list_losers():
-    df_day_losers = si.get_day_losers()
+    df_day_losers = get_from_si(si.get_day_losers)
+    if df_day_losers == None:
+        return None
+
     list_losers = df_day_losers['Symbol'].tolist()
 
     list_sectors = ['' for i in range(len(list_losers))]
@@ -171,7 +192,10 @@ def get_list_losers():
     return df
 
 def get_list_gainers():
-    df_day_gainers = si.get_day_gainers()
+    df_day_gainers = get_from_si(si.get_day_gainers)
+    if df_day_gainers == None:
+        return None
+
     list_gainers = df_day_gainers['Symbol'].tolist()
 
     list_sectors = ['' for i in range(len(list_gainers))]
@@ -186,8 +210,11 @@ def get_list_gainers():
     return df
 
 def get_list_most_actives():
-    df_day_losers = si.get_day_most_active()
-    list_actives = df_day_losers['Symbol'].tolist()
+    df_day_most_active = get_from_si(si.get_day_most_active)
+    if df_day_most_active == None:
+        return None
+
+    list_actives = df_day_most_active['Symbol'].tolist()
 
     list_sectors = ['' for i in range(len(list_actives))]
     list_industry = ['' for i in range(len(list_actives))]
