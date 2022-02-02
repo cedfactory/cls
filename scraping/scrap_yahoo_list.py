@@ -108,7 +108,7 @@ def get_list_IBOVESPA():
 
 def get_list_NIFTY50():
     list_nifty = get_from_si(si.tickers_nifty50)
-    if list_nifty == None:
+    if isinstance(list_nifty, pd.DataFrame) == False:
         return None
 
     list_sectors = ['' for i in range(len(list_nifty))]
@@ -157,7 +157,7 @@ def get_list_EURONEXT():
 
 def get_list_undervalued():
     df_day_undervalued = get_from_si(si.get_undervalued_large_caps)
-    if df_day_undervalued == None:
+    if isinstance(df_day_undervalued, pd.DataFrame) == False:
         return None
 
     list_undervalued = df_day_undervalued['Symbol'].tolist()
@@ -175,7 +175,7 @@ def get_list_undervalued():
 
 def get_list_losers():
     df_day_losers = get_from_si(si.get_day_losers)
-    if df_day_losers == None:
+    if isinstance(df_day_losers, pd.DataFrame) == False:
         return None
 
     list_losers = df_day_losers['Symbol'].tolist()
@@ -193,7 +193,7 @@ def get_list_losers():
 
 def get_list_gainers():
     df_day_gainers = get_from_si(si.get_day_gainers)
-    if df_day_gainers == None:
+    if isinstance(df_day_gainers, pd.DataFrame) == False:
         return None
 
     list_gainers = df_day_gainers['Symbol'].tolist()
@@ -211,7 +211,7 @@ def get_list_gainers():
 
 def get_list_most_actives():
     df_day_most_active = get_from_si(si.get_day_most_active)
-    if df_day_most_active == None:
+    if isinstance(df_day_most_active, pd.DataFrame) == False:
         return None
 
     list_actives = df_day_most_active['Symbol'].tolist()
