@@ -2,10 +2,15 @@ import pandas as pd
 from init import config
 from scraping import scrap_wiki_list
 
-def fill_df(input_file):
-    filename = config.OUTPUT_DIR_RESULT + 'symbol_list_' + input_file + ".csv"
-    filename_isni = config.OUTPUT_DIR_RESULT + 'symbol_list_isni_' + input_file + ".csv"
-    df = pd.read_csv(filename)
+'''
+symbol_list_filename_in is rewritten except if symbol_list_filename_out is specified
+'''
+def fill_df(symbol_list_filename_in, symbol_list_isni_filename_out,
+            symbol_list_filename_out=""):
+    if symbol_list_filename_out == "":
+        symbol_list_filename_out = symbol_list_filename_in
+    df = pd.read_csv(symbol_list_filename_in)
+    
     df = df.set_index('symbol', drop=True)
     df.drop("Unnamed: 0", axis=1, inplace=True)
 
@@ -41,10 +46,10 @@ def fill_df(input_file):
     df_isni.reset_index(drop=True, inplace=True)
 
 
-    print("symbols with data: ", len(df), " => ", filename)
-    print("symbols with ISNI: ", len(df_isni), " => ", filename_isni)
+    print("symbols with data: ", len(df), " => ", symbol_list_filename_out)
+    print("symbols with ISNI: ", len(df_isni), " => ", symbol_list_isni_filename_out)
     print("dropped symbols:   ", len(list_stock_dropped), " =>  Get the fuck out")
     # print(list_stock_no_data)
 
-    df.to_csv(filename)
-    df_isni.to_csv(filename_isni)
+    df.to_csv(symbol_list_filename_out)
+    df_isni.to_csv(symbol_list_isni_filename_out)

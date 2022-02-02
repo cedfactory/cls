@@ -1,0 +1,148 @@
+symbol,name,isin,sector,industry,country,exchange
+1COV.DE,COVESTRO AG,AT0000816301,Basic Materials,Specialty Chemicals,Germany,GER
+AAL,"American Airlines Group, Inc.",US02376R1023,Industrials,Airlines,United States,NMS
+ACA.PA,CREDIT AGRICOLE,FR0000185506,Financial Services,Banks—Regional,France,PAR
+ADM,Archer-Daniels-Midland Company,US0394831020,Consumer Defensive,Farm Products,United States,NYQ
+ADS.DE,ADIDAS AG,AT0000816301,Consumer Cyclical,Footwear & Accessories,Germany,GER
+AGR,"Avangrid, Inc.",US05351W1036,Utilities,Utilities—Regulated Electric,United States,NYQ
+AHT,Ashford Hospitality Trust Inc,US0441038694,Real Estate,REIT—Hotel & Motel,United States,NYQ
+AI.PA,AIR LIQUIDE,FR0000053951,Basic Materials,Specialty Chemicals,France,PAR
+AIR.PA,AIRBUS SE,DE000A2P4HL9,Industrials,Aerospace & Defense,Netherlands,PAR
+ALO.PA,ALSTOM,-,Industrials,Railroads,France,PAR
+ALV.DE,ALLIANZ SE,BE0974269012,Financial Services,Insurance—Diversified,Germany,GER
+AUTO,"AutoWeb, Inc.",US05335B1008,Communication Services,Internet Content & Information,United States,NCM
+AZN,Astrazeneca PLC,US0463531089,Healthcare,Drug Manufacturers—General,United Kingdom,NMS
+BA,Boeing Company (The),US0970231058,Industrials,Aerospace & Defense,United States,NYQ
+BAS.DE,BASF SE,INE373A01013,Basic Materials,Chemicals,Germany,GER
+BAYN.DE,BAYER AG,DE000A1CRQD6,Healthcare,Drug Manufacturers—General,Germany,GER
+BBGI,"Beasley Broadcast Group, Inc.",US0740141017,Communication Services,Broadcasting,United States,NGM
+BBY,"Best Buy Co., Inc.",US0865161014,Consumer Cyclical,Specialty Retail,United States,NYQ
+BGS,"B&G Foods, Inc. B&G Foods, Inc.",US05508R1068,Consumer Defensive,Packaged Foods,United States,NYQ
+BLND,"Blend Labs, Inc.",US09352U1088,Technology,Software—Application,United States,NYQ
+BME,Blackrock Health Sciences Trust,SG2F26986156,Financial Services,Asset Management,United States,NYQ
+BMW.DE,BAYERISCHE MOTOREN WERKE AG,DE0005538607,Consumer Cyclical,Auto Manufacturers,Germany,GER
+BN.PA,DANONE,-,Consumer Defensive,Packaged Foods,France,PAR
+BNP.PA,BNP PARIBAS ACT.A,-,Financial Services,Banks—Regional,France,PAR
+BP,BP p.l.c.,US0556221044,Energy,Oil & Gas Integrated,United Kingdom,NYQ
+BPT,BP Prudhoe Bay Royalty Trust,US0556301077,Energy,Oil & Gas Refining & Marketing,United States,NYQ
+BRW,187480,-,Financial Services,Asset Management,United States,NYQ
+CA.PA,CARREFOUR,FR0010828137,Consumer Defensive,Grocery Stores,France,PAR
+CAP.PA,CAPGEMINI,-,Technology,Information Technology Services,France,PAR
+CAPC,CAPSTONE COMPANIES INC,US14070F2011,Industrials,Electrical Equipment & Parts,United States,PNK
+CCL,Carnival Corporation,PA1436583006,Consumer Cyclical,Travel Services,United States,NYQ
+CLI,Mack-Cali Realty Corporation,-,Real Estate,REIT—Office,United States,NYQ
+CNA,CNA Financial Corporation,US1261171003,Financial Services,Insurance—Property & Casualty,United States,NYQ
+CON.DE,CONTINENTAL AG,INE423K01015,Consumer Cyclical,Auto Parts,Germany,GER
+CPG,Crescent Point Energy Corporati,CA22576C1014,Energy,Oil & Gas E&P,Canada,NYQ
+CRH,CRH PLC,US12626K2033,Basic Materials,Building Materials,Ireland,NYQ
+CS.PA,AXA,SA12A0540T12,Financial Services,Insurance—Diversified,France,PAR
+CWK,Cushman & Wakefield plc,GB00BFZ4N465,Real Estate,Real Estate Services,United Kingdom,NYQ
+DAI.DE,DAIMLER AG,DE000DTR0013,Consumer Cyclical,Auto Manufacturers,Germany,GER
+DB1.DE,DEUTSCHE BOERSE NA O.N.,-,Financial Services,Financial Data & Stock Exchanges,Germany,GER
+DBK.DE,DEUTSCHE BANK AG,DE000A14KRD3,Financial Services,Banks—Regional,Germany,GER
+DG.PA,VINCI,CA75103L1013,Industrials,Engineering & Construction,France,PAR
+DHER.DE,Delivery Hero SE Namens-Aktien,-,Consumer Cyclical,Internet Retail,Germany,GER
+DOCS,"Doximity, Inc.",US26622P1075,Healthcare,Health Information Services,United States,NYQ
+DPW.DE,DEUTSCHE POST AG,DE000A3H2317,Industrials,Integrated Freight & Logistics,Germany,GER
+DTE.DE,DEUTSCHE TELEKOM AG,DE000A14KRD3,Communication Services,Telecom Services,Germany,GER
+DWNI.DE,DEUTSCHE WOHNEN SE INH,DE000A3E5DW4,Real Estate,Real Estate—Development,Germany,GER
+EL.PA,ESSILORLUXOTTICA,-,Healthcare,Medical Instruments & Supplies,France,PAR
+EN.PA,BOUYGUES,FR0014006U75,Industrials,Engineering & Construction,France,PAR
+ENGI.PA,ENGIE,FR0013215407,Utilities,Utilities—Diversified,France,PAR
+ENR.DE,SIEMENS ENERGY AG NA O.N.,-,Utilities,Utilities—Independent Power Producers,Germany,GER
+EOAN.DE,E.ON SE,DE000A2P4HL9,Utilities,Utilities—Diversified,Germany,GER
+ERF.PA,EUROFINS SCIENT.,-,Healthcare,Diagnostics & Research,Luxembourg,PAR
+ESNT,Essent Group Ltd.,BMG3198U1027,Financial Services,Insurance—Specialty,Bermuda,NYQ
+EVR,Evercore Inc.,US29977A1051,Financial Services,Capital Markets,United States,NYQ
+FCIT,FIRST CITRUS BANCORPORATION INC,US31959T1025,Financial Services,Banks—Regional,United States,PNK
+FERG,Ferguson plc,JE00BJVNSS43,Industrials,Industrial Distribution,United Kingdom,NYQ
+FME.DE,FRESENIUS MEDICAL CARE AG & CO,-,Healthcare,Medical Care Facilities,Germany,GER
+FOUR,"Shift4 Payments, Inc.",US82452J1097,Technology,Software—Infrastructure,United States,NYQ
+FRE.DE,FRESENIUS SE&CO KGAA,-,Healthcare,Medical Care Facilities,Germany,GER
+FSV,FirstService Corporation,CA33767E2024,Real Estate,Real Estate Services,Canada,NMS
+GCP,GCP Applied Technologies Inc.,US36164Y1010,Basic Materials,Specialty Chemicals,United States,NYQ
+GLE.PA,SOCIETE GENERALE,JO1102011011,Financial Services,Banks—Regional,France,PAR
+GLO,Clough Global Opportunities Fun,INE863E01015,Financial Services,Asset Management,United States,NYQ
+GPOR,Gulfport Energy Corporation,US4026355028,Energy,Oil & Gas E&P,United States,NYQ
+GROW,"U.S. Global Investors, Inc.",US9029521005,Financial Services,Asset Management,United States,NCM
+GSK,GlaxoSmithKline PLC,US37733W1053,Healthcare,Drug Manufacturers—General,United Kingdom,NYQ
+GSS,"Golden Star Resources, Ltd",CA38119T8077,Basic Materials,Gold,Canada,ASE
+HAS,"Hasbro, Inc.",US4180561072,Consumer Cyclical,Leisure,United States,NMS
+HEI.DE,HEIDELBERGCEMENT AG O.N.,-,Basic Materials,Building Materials,Germany,GER
+HEN3.DE,HENKEL AG&CO. KGAA,-,Consumer Defensive,Household & Personal Products,Germany,GER
+HO.PA,THALES,VGG878801114,Industrials,Aerospace & Defense,France,PAR
+HRI,Herc Holdings Inc.,US42704L1044,Industrials,Rental & Leasing Services,United States,NYQ
+IAG,Iamgold Corporation,CA4509131088,Basic Materials,Gold,Canada,NYQ
+IFX.DE,INFINEON TECHNOLOGIES AG,DE000A2540G7,Technology,Semiconductors,Germany,GER
+IHG,Intercontinental Hotels Group,US45857P8068,Consumer Cyclical,Lodging,United Kingdom,NYQ
+III,"Information Services Group, Inc",US45675Y1047,Technology,Information Technology Services,United States,NGM
+JD,"JD.com, Inc.",US47215P1066,Consumer Cyclical,Internet Retail,China,NMS
+KER.PA,KERING,JP3270790003,Consumer Cyclical,Luxury Goods,France,PAR
+KNOS,KRONOS ADVANCED TECH INC,US50105X1063,Industrials,Pollution & Treatment Controls,United States,PNK
+LAND,Gladstone Land Corporation,US3765491010,Real Estate,REIT—Industrial,United States,NGM
+LIN.DE,"LINDE PLC  EO 0,001",-,Basic Materials,Specialty Chemicals,United Kingdom,GER
+LR.PA,LEGRAND,-,Industrials,Specialty Industrial Machinery,France,PAR
+MC.PA,LVMH,-,Consumer Cyclical,Luxury Goods,France,PAR
+MDC,"M.D.C. Holdings, Inc.",US5526761086,Consumer Cyclical,Residential Construction,United States,NYQ
+ML.PA,MICHELIN,-,Consumer Cyclical,Auto Parts,France,PAR
+MRC,MRC Global Inc.,US55345K1034,Energy,Oil & Gas Equipment & Services,United States,NYQ
+MRK.DE,MERCK KGAA,DE0008148206,Healthcare,Drug Manufacturers—Specialty & Generic,Germany,GER
+MRO,Marathon Oil Corporation,US5658491064,Energy,Oil & Gas E&P,United States,NYQ
+MT.AS,ARCELORMITTAL SA,CH0011607683,Basic Materials,Steel,Luxembourg,AMS
+MTX.DE,MTU AERO ENGINES NA O.N.,-,Industrials,Aerospace & Defense,Germany,GER
+MUV2.DE,MUENCHENER RUECKVERSICHERUNGS A,-,Financial Services,Insurance—Reinsurance,Germany,GER
+MYI,Blackrock MuniYield Quality Fun,INE863E01015,Financial Services,Asset Management,United States,NYQ
+NEX,NexTier Oilfield Solutions Inc.,-,Energy,Oil & Gas Equipment & Services,United States,NYQ
+NWG,NatWest Group plc,GB00BD0NVK62,Financial Services,Banks—Diversified,United Kingdom,NYQ
+OR.PA,L'OREAL,FR0011149590,Consumer Defensive,Household & Personal Products,France,PAR
+ORA.PA,ORANGE,AU0000184293,Communication Services,Telecom Services,France,PAR
+PAG,"Penske Automotive Group, Inc.",US70959W1036,Consumer Cyclical,Auto & Truck Dealerships,United States,NYQ
+PCT,"PureCycle Technologies, Inc.",US74623V1035,Industrials,Pollution & Treatment Controls,United States,NCM
+PETS,"PetMed Express, Inc.",US7163821066,Healthcare,Pharmaceutical Retailers,United States,NMS
+PFD,Flaherty & Crumrine Preferred I,-,Financial Services,Asset Management,United States,NYQ
+PFG,Principal Financial Group Inc,US74251V1026,Financial Services,Insurance—Diversified,United States,NMS
+PLUS,ePlus inc.,US2942681071,Technology,Software—Application,United States,NMS
+POLY,"Plantronics, Inc.",US7274931085,Technology,Communication Equipment,United States,NYQ
+PRTC,PureTech Health plc,US7462371060,Healthcare,Biotechnology,United States,NGM
+PRU,"Prudential Financial, Inc.",US7443201022,Financial Services,Insurance—Life,United States,NYQ
+PSN,Parsons Corporation,US70202L1026,Industrials,Specialty Industrial Machinery,United States,NYQ
+PUB.PA,PUBLICIS GROUPE SA,FR0014004X25,Communication Services,Advertising Agencies,France,PAR
+PZC,PIMCO California Municipal Inco,-,Financial Services,Asset Management,United States,NYQ
+RDW,Redwire Corporation,US75776W1036,Industrials,Aerospace & Defense,United States,NYQ
+RI.PA,PERNOD RICARD,-,Consumer Defensive,Beverages—Wineries & Distilleries,France,PAR
+RIO,Rio Tinto Plc,US7672041008,Basic Materials,Other Industrial Metals & Mining,United Kingdom,NYQ
+RKT,"Rocket Companies, Inc.",US77311W1018,Financial Services,Mortgage Finance,United States,NYQ
+RMS.PA,HERMES INTL,-,Consumer Cyclical,Luxury Goods,France,PAR
+RNO.PA,RENAULT,-,Consumer Cyclical,Auto Manufacturers,France,PAR
+RWE.DE,RWE AG  INH O.N.,-,Utilities,Utilities—Diversified,Germany,GER
+SAF.PA,SAFRAN,GRS118003003,Industrials,Aerospace & Defense,France,PAR
+SAFE,Safehold Inc.,US78645L1008,Real Estate,REIT—Diversified,United States,NYQ
+SAN.PA,SANOFI,INE058A01010,Healthcare,Drug Manufacturers—General,France,PAR
+SAP.DE,SAP SE,DE000A2P4HL9,Technology,Software—Application,Germany,GER
+SGO.PA,SAINT GOBAIN,-,Industrials,Building Products & Equipment,France,PAR
+SIE.DE,SIEMENS AG,AT0000816301,Industrials,Specialty Industrial Machinery,Germany,GER
+SNN,"Smith & Nephew SNATS, Inc.",US83175M2052,Healthcare,Medical Devices,United Kingdom,NYQ
+SOI,Solaris Oilfield Infrastructure,US83418M1036,Energy,Oil & Gas Equipment & Services,United States,NYQ
+SPI,"SPI Energy Co., Ltd.",KYG8651P1101,Technology,Solar,Hong Kong,NMS
+SPT,"Sprout Social, Inc",US85209W1099,Technology,Software—Application,United States,NCM
+SRE,DBA Sempra,US8168511090,Utilities,Utilities—Diversified,United States,NYQ
+STLA.PA,STELLANTIS NV,-,Consumer Cyclical,Auto Manufacturers,Netherlands,PAR
+STM.PA,STMICROELECTRONICS,-,Technology,Semiconductors,Switzerland,PAR
+SU.PA,SCHNEIDER ELECTRIC SE,DE000A2P4HL9,Industrials,Specialty Industrial Machinery,France,PAR
+SVT,"Servotronics, Inc.",US8177321002,Industrials,Electrical Equipment & Parts,United States,ASE
+TEP.PA,TELEPERFORMANCE,-,Industrials,Specialty Business Services,France,PAR
+TRN,"Trinity Industries, Inc.",US8965221091,Industrials,Railroads,United States,NYQ
+TRST,TrustCo Bank Corp NY,US8983492047,Financial Services,Banks—Regional,United States,NMS
+TSCO,Tractor Supply Company,US8923561067,Consumer Cyclical,Specialty Retail,United States,NMS
+TTE.PA,TOTALENERGIES,-,Energy,Oil & Gas Integrated,France,PAR
+TW,Tradeweb Markets Inc.,US8926721064,Financial Services,Capital Markets,United States,NMS
+URW.AS,UNIBAIL-RODAMCO-WESTFIELD,-,Real Estate,REIT—Retail,France,AMS
+USA,Liberty All-Star Equity Fund,NET000STAR12,Financial Services,Asset Management,United States,NYQ
+UTG,53270,-,Financial Services,Asset Management,United States,NYQ
+VIE.PA,VEOLIA ENVIRON.,-,Industrials,Waste Management,France,PAR
+VIV.PA,VIVENDI SE,DE000A2P4HL9,Communication Services,Broadcasting,France,PAR
+VNA.DE,VONOVIA SE NA O.N.,-,Real Estate,Real Estate Services,Germany,GER
+VOD,Vodafone Group Plc,US92857W3088,Communication Services,Telecom Services,United Kingdom,NMS
+VOW3.DE,VOLKSWAGEN AG,NET0VW0LUE01,Consumer Cyclical,Auto Manufacturers,Germany,GER
+WLN.PA,WORLDLINE,-,Technology,Software—Infrastructure,France,PAR
+WPP,WPP plc,US92937A1025,Communication Services,Advertising Agencies,United Kingdom,NYQ
