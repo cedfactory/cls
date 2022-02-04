@@ -28,12 +28,14 @@ def drop_df_duplicates(df, column):
         print("")
     return df
 
-def clean_up_df_symbol(path):
-    df = pd.read_csv(path)
+def clean_up_df_symbol(path_in, path_out=""):
+    if path_out == "":
+        path_out = path_in
+    df = pd.read_csv(path_in)
     df = drop_df_duplicates(df, "symbol")
     for c in df.columns:
         if c.startswith("Unnamed"):
             df.drop(c, axis=1, inplace=True)
 
-    df.to_csv(path)
+    df.to_csv(path_out)
 
