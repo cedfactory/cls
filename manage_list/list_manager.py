@@ -76,3 +76,72 @@ def get_list():
         df_NIFTY = scrap_yahoo_list.get_list_NIFTY_BANK()
         if isinstance(df_NIFTY, pd.DataFrame):
             df_NIFTY.to_csv(config.OUTPUT_DIR_OTHERS+"NIFTYBANK.csv")
+
+def api_get_list(markets):
+    result = {}
+
+    if("euronext" in markets):
+        df_EURONEXT = scrap_yahoo_list.get_list_EURONEXT()
+        result["euronext"] = df_EURONEXT
+
+    if("cac" in markets):
+        df_CAC = scrap_wiki_list.get_list_CAC()
+        result["cac"] = df_CAC
+
+    if("dax" in markets):
+        df_DAX = scrap_wiki_list.get_list_DAX()
+        result["dax"] = df_DAX
+
+    if("ftse" in markets):
+        df_FTSE = scrap_yahoo_list.get_list_FTSE100()
+        result["ftse100"] = df_FTSE
+        df_FTSE = scrap_yahoo_list.get_list_FTSE250()
+        result["ftse250"] = df_FTSE
+
+    if ("nasdaq100" in markets):
+        df_NASDAQ100 = scrap_wiki_list.get_list_NASDAQ100()
+        result["nasdaq100"] = df_NASDAQ100
+
+    if ("nasdaq" in markets):
+        df_NASDAQ = scrap_yahoo_list.get_list_NASDAQ()
+        result["nasdaq"] = df_NASDAQ
+
+    if ("dji" in markets):
+        df_DJI = scrap_wiki_list.get_list_DJI()
+        result["dji"] = df_DJI
+        df_DJI.to_csv(config.OUTPUT_DIR_US+"DJI.csv")
+        df_DJI = scrap_yahoo_list.get_list_DOW()
+        result["dow"] = df_DJI
+
+    if ("sp500" in markets):
+        df_SP500 = scrap_wiki_list.get_list_SP500()
+        result["sp500"] = df_SP500
+        df_SP500 = scrap_yahoo_list.get_list_yahoo_SP500()
+        result["sp500_yahoo"] = df_SP500
+
+    if ("yahoo" in markets):
+        df_actives, df_trending, df_gainers, df_loosers, df_undervaluated = scrap_yahoo_list.get_list_YAHOO()
+        if isinstance(df_actives, pd.DataFrame):
+            result["actives"] = df_actives
+        if isinstance(df_trending, pd.DataFrame):
+            result["trending"] = df_trending
+        if isinstance(df_gainers, pd.DataFrame):
+            result["gainers"] = df_gainers
+        if isinstance(df_loosers, pd.DataFrame):
+            result["loosers"] = df_loosers
+        if isinstance(df_undervaluated, pd.DataFrame):
+            result["undervaluated"] = df_undervaluated
+
+    if ("ibovespa" in markets):
+        df_ibovespa = scrap_yahoo_list.get_list_IBOVESPA()
+        result["ibovespa"] = df_ibovespa
+
+    if ("nifty" in markets):
+        df_NIFTY = scrap_yahoo_list.get_list_NIFTY50()
+        if isinstance(df_NIFTY, pd.DataFrame):
+            result["nifty50"] = df_NIFTY
+        df_NIFTY = scrap_yahoo_list.get_list_NIFTY_BANK()
+        if isinstance(df_NIFTY, pd.DataFrame):
+            result["niftybank"] = df_NIFTY
+
+    return result
