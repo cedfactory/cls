@@ -18,5 +18,6 @@ class TestMerging:
     #
 
     def test_merge_list(self):
+        pass
         df = merging_csv.merge_list("CSL_EURONEXT.csv", "./test/generated/test_merge_list.csv")
         self.check_expectations(df, "test_merge_list.csv")
