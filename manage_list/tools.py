@@ -2,8 +2,9 @@ import os
 import pandas as pd
 
 def wipe_out_directory(path):
-    for f in os.listdir(path):
-        os.remove(os.path.join(path, f))
+    if os.path.isdir(path) == True:
+        for f in os.listdir(path):
+            os.remove(os.path.join(path, f))
 
 def get_input_list(file):
     df_input = pd.read_csv(file)
