@@ -31,6 +31,7 @@ def drop_df_duplicates(df, column):
     return df
 
 def set_euronext_data_symbol(df):
+    df.columns = df.columns.str.lower()
     df = df.dropna()
     df["newsymbol"] = ""
     tickers = df['symbol'].tolist()
