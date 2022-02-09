@@ -36,18 +36,19 @@ def set_euronext_data_symbol(df):
     # insert_df_column(df)
     df = df.set_index('symbol')
     for ticker in tickers:
-        if df.market[ticker].endswith("Paris"):
-            df["newsymbol"][ticker] = ticker + ".PA"
-        elif df.market[ticker].endswith("Brussels"):
-            df["newsymbol"][ticker] = ticker + ".BE"
-        elif df.market[ticker].endswith("Amsterdam"):
-            df["newsymbol"][ticker] = ticker + ".AS"
-        elif df.market[ticker].endswith("Dublin"):
-            df["newsymbol"][ticker] = ticker + ".IR"
-        elif df.market[ticker].endswith("Lisbon"):
-            df["newsymbol"][ticker] = ticker + ".LS"
-        elif df.market[ticker].endswith("Oslo"):
-            df["newsymbol"][ticker] = ticker + ".OL"
+        if "." not in ticker:
+            if df.market[ticker].endswith("Paris"):
+                df["newsymbol"][ticker] = ticker + ".PA"
+            elif df.market[ticker].endswith("Brussels"):
+                df["newsymbol"][ticker] = ticker + ".BE"
+            elif df.market[ticker].endswith("Amsterdam"):
+                df["newsymbol"][ticker] = ticker + ".AS"
+            elif df.market[ticker].endswith("Dublin"):
+                df["newsymbol"][ticker] = ticker + ".IR"
+            elif df.market[ticker].endswith("Lisbon"):
+                df["newsymbol"][ticker] = ticker + ".LS"
+            elif df.market[ticker].endswith("Oslo"):
+                df["newsymbol"][ticker] = ticker + ".OL"
 
     df['newsymbol'].replace('', np.nan, inplace=True)
     df.dropna(subset=["newsymbol"], inplace=True)
