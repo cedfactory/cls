@@ -1,4 +1,4 @@
-Name,ISIN,Symbol,Market,Trading Currency
+name,ISIN,symbol,market,trading currency
 1000MERCIS,FR0010285965,ALMIL,Euronext Growth Paris,EUR
 2020 BULKERS,BMG9156K1018,2020,Oslo Børs,NOK
 2CRSI,FR0013341781,2CRSI,Euronext Paris,EUR
