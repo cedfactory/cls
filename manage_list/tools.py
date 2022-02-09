@@ -31,6 +31,7 @@ def drop_df_duplicates(df, column):
     return df
 
 def set_euronext_data_symbol(df):
+    df = df.dropna()
     df["newsymbol"] = ""
     tickers = df['symbol'].tolist()
     # insert_df_column(df)
@@ -49,6 +50,8 @@ def set_euronext_data_symbol(df):
                 df["newsymbol"][ticker] = ticker + ".LS"
             elif df.market[ticker].endswith("Oslo"):
                 df["newsymbol"][ticker] = ticker + ".OL"
+        else:
+            df["newsymbol"][ticker] = ticker
 
     df['newsymbol'].replace('', np.nan, inplace=True)
     df.dropna(subset=["newsymbol"], inplace=True)
