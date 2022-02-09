@@ -38,7 +38,9 @@ if __name__ == '__main__':
     if(config.CLEAN_DATABASE == True):
         tools.clean_up_df_symbol(config.INPUT_FILE_IMPORTED_DATA)
         tools.clean_up_df_symbol(config.INPUT_FILE_IMPORTED_DATA_ISNI)
-    
+    if(config.CLEAN_EURONEXT_DATABASE == True):
+        tools.clean_up_df_symbol(config.INPUT_FILE_IMPORTED_DATA_EURONEXT)
+
     start = datetime.now()
     list_manager.get_list()
     end = datetime.now()
