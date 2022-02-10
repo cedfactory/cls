@@ -65,6 +65,19 @@ def set_euronext_data_symbol(df):
 
     return df
 
+def move_column_position(df, col, pos):
+    col = df.pop(col)
+    df.insert(pos, col.name, col)
+
+    return df
+
+def clean_up_df_column(df):
+    for c in df.columns:
+        if c.startswith("Unnamed"):
+            df.drop(c, axis=1, inplace=True)
+
+    return df
+
 def clean_up_df_symbol(path_in, path_out=""):
     if path_out == "":
         path_out = path_in
@@ -79,3 +92,22 @@ def clean_up_df_symbol(path_in, path_out=""):
 
     df.to_csv(path_out)
 
+def split_df(df, size_split):
+    return df[:size_split], df[size_split:]
+
+def split_list_into_list(df, split_size):
+    # split a df into a list of breakdown df
+    len_df = len(df)
+    len_split_df = int(len_df / split_size)
+
+    rest_of_the_df = df.copy()
+    global_split_list = []
+
+    for i in range(split_size):
+        splited_df, rest_of_the_df = split_df(rest_of_the_df, len_split_df)
+        global_split_list.append(splited_df)
+
+    if len(rest_of_the_df) > 1:
+        global_split_list.append(rest_of_the_df)
+
+    return global_split_list

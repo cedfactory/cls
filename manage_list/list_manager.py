@@ -6,10 +6,17 @@ import pandas as pd
 def mk_directories():
     ALL_DIRS = [config.OUTPUT_DIR, config.OUTPUT_DIR_DATE, config.OUTPUT_DIR_MERGED,
         config.OUTPUT_DIR_RESULT, config.OUTPUT_DIR_MARKET, config.OUTPUT_DIR_EUROPE,
-        config.OUTPUT_DIR_US, config.OUTPUT_DIR_ASIA, config.OUTPUT_DIR_OTHERS]
+        config.OUTPUT_DIR_US, config.OUTPUT_DIR_ASIA, config.OUTPUT_DIR_OTHERS,
+        config.MULTITHREADING_POOL]
+    CLEAR_DIRS = [config.MULTITHREADING_POOL]
+
     for dir in ALL_DIRS:
         if not os.path.exists(dir):
             os.makedirs(dir)
+
+    for dir in CLEAR_DIRS:
+        for f in os.listdir(dir):
+            os.remove(os.path.join(dir, f))
 
 def get_list():
     mk_directories()
