@@ -26,7 +26,7 @@ def get_info_list(df):
             try:
                 df.loc[stock, 'isin'] = yf_stock.isin
             except:
-                pass
+                df.loc[stock, 'isin'] = '-'
             try:
                 df.loc[stock, 'industry'] = yf_stock.info['industry']
             except:

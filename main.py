@@ -50,8 +50,8 @@ if __name__ == '__main__':
     merging_csv.merge_list(input_file + '.csv')
     if(config.FILL_DATA_FROM_DATABASE):
         symbol_list_filename_in = config.OUTPUT_DIR_RESULT + 'symbol_list_' + input_file + ".csv"
-        symbol_list_isni_filename_out = config.OUTPUT_DIR_RESULT + 'symbol_list_isni_' + input_file + ".csv"
-        fill_df_data.fill_df(symbol_list_filename_in, symbol_list_isni_filename_out)
+        symbol_list_filename_out = config.OUTPUT_DIR_RESULT + input_file + '_with_info' + ".csv"
+        fill_df_data.fill_df(symbol_list_filename_in, symbol_list_filename_out)
     else:
         while True:
             # FILL DATABASE FROM YAHOO FINANCE
