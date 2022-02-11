@@ -53,8 +53,9 @@ if __name__ == '__main__':
         symbol_list_isni_filename_out = config.OUTPUT_DIR_RESULT + 'symbol_list_isni_' + input_file + ".csv"
         fill_df_data.fill_df(symbol_list_filename_in, symbol_list_isni_filename_out)
     else:
-        # FILL DATA FROM YAHOO FINANCE
-        for i in range(1000):
-            print('RUN: ',i)
+        while True:
+            # FILL DATABASE FROM YAHOO FINANCE
+            print('RUN: ', config.REFRESH_DATABASE_LOOP)
+            config.REFRESH_DATABASE_LOOP = config.REFRESH_DATABASE_LOOP + 1
             scrap_profile.refresh_database(input_file)
 

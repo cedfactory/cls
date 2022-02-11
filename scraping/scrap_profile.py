@@ -72,7 +72,6 @@ def get_info_multi_list(df):
     df_failed.to_csv(filename_failed)
 
 def refresh_database(input_file):
-    list_df_result = []
     df = pd.read_csv(config.OUTPUT_DIR_RESULT + 'symbol_list_' + input_file + '.csv')
 
     df = cross_check.cross_check_data(df)
@@ -90,21 +89,17 @@ def refresh_database(input_file):
     else:
         df_with_info, df_failed = get_info_list(df)
 
-    df_with_info.to_csv(config.OUTPUT_DIR_RESULT + input_file + '_with_info.csv')
-    df_failed.to_csv(config.OUTPUT_DIR_RESULT + input_file + '_failed.csv')
+    tools.save_df_to_csv(df_with_info, config.OUTPUT_DIR_RESULT, input_file, '_with_info.csv')
+    tools.save_df_to_csv(df_failed, config.OUTPUT_DIR_RESULT, input_file, '_failed.csv')
 
     df_with_info = cross_check.check_valid_data(df_with_info)
+    print('df_with_info: ',len(df_with_info))
+
     df_database = pd.read_csv(config.INPUT_FILE_IMPORTED_DATA)
-    print('database size: ',len(df_database))
-    list_df_result = [df_database, df_with_info]
+    print('df_database: ', len(df_database))
 
-    df_with_info = pd.concat(list_df_result, axis=0, ignore_index=True)
-
-    # df_with_info = df_with_info.sort_values(by=['symbol'], ascending=True)
-    # df_with_info.reset_index(drop=True, inplace=True)
-
-    df_with_info = tools.drop_df_duplicates(df_with_info, 'symbol')
-    df_with_info = tools.clean_up_df_column(df_with_info)
+    df_with_info = tools.concat_and_clean_df(df_database, df_with_info, 'symbol')
+    print('df_with_info + df_database: ', len(df_with_info))
 
     df_with_info.to_csv(config.INPUT_FILE_IMPORTED_DATA)
 

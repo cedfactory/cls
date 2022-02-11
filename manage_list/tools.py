@@ -111,3 +111,20 @@ def split_list_into_list(df, split_size):
         global_split_list.append(rest_of_the_df)
 
     return global_split_list
+
+
+def save_df_to_csv(df, path, file, pattern):
+    df.to_csv(path + file + pattern)
+
+def concat_df(df1, df2):
+    list_df = [df1, df2]
+    df = pd.concat(list_df, axis=0, ignore_index=True)
+    return df
+
+def concat_and_clean_df(df1, df2, column):
+    list_df = [df1, df2]
+    df = pd.concat(list_df, axis=0, ignore_index=True)
+
+    df = drop_df_duplicates(df, column)
+    df = clean_up_df_column(df)
+    return df
