@@ -12,7 +12,11 @@ def cross_check_data(df):
 
     for ticker in list_data_symbols:
         if ticker in list_df_symbols:
-            df = df.drop(index=ticker)
+            try:
+                df = df.drop(index=ticker)
+                #print(ticker)
+            except:
+                pass
 
     df['symbol'] = df.index
     df.reset_index(drop=True, inplace=True)
