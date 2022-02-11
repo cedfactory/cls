@@ -10,19 +10,15 @@ def cross_check_data(df):
 
     df = df.set_index('symbol',drop=True)
 
-    print(len(df))
-
     for ticker in list_data_symbols:
         if ticker in list_df_symbols:
             df = df.drop(index=ticker)
-            print(ticker)
 
     df['symbol'] = df.index
     df.reset_index(drop=True, inplace=True)
     df = tools.move_column_position(df, 'symbol', 0)
     df = tools.clean_up_df_column(df)
 
-    print(len(df))
     return df
 
 

@@ -54,4 +54,7 @@ if __name__ == '__main__':
         fill_df_data.fill_df(symbol_list_filename_in, symbol_list_isni_filename_out)
     else:
         # FILL DATA FROM YAHOO FINANCE
-        scrap_profile.refresh_database(input_file)
+        for i in range(1000):
+            print('RUN: ',i)
+            scrap_profile.refresh_database(input_file)
+

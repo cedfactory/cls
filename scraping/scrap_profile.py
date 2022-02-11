@@ -95,6 +95,7 @@ def refresh_database(input_file):
 
     df_with_info = cross_check.check_valid_data(df_with_info)
     df_database = pd.read_csv(config.INPUT_FILE_IMPORTED_DATA)
+    print('database size: ',len(df_database))
     list_df_result = [df_database, df_with_info]
 
     df_with_info = pd.concat(list_df_result, axis=0, ignore_index=True)
