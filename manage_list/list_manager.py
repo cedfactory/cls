@@ -1,5 +1,6 @@
 import os
 from init import config
+from manage_list import tools
 from scraping import scrap_yahoo_list,scrap_wiki_list
 import pandas as pd
 
@@ -13,10 +14,8 @@ def mk_directories():
     for dir in ALL_DIRS:
         if not os.path.exists(dir):
             os.makedirs(dir)
-
     for dir in CLEAR_DIRS:
-        for f in os.listdir(dir):
-            os.remove(os.path.join(dir, f))
+        tools.wipe_out_directory(dir)
 
 def get_list():
     mk_directories()

@@ -1,10 +1,13 @@
 import pandas as pd
+import time
 #from yahoo_fin import stock_info as si
 import yfinance as yf
+import requests_cache
 import concurrent.futures
 import uuid
 from merging import merging_csv
 from manage_list import tools
+from manage_list import cross_check
 from init import config
 
 def get_info_list(df):
@@ -15,7 +18,11 @@ def get_info_list(df):
     for stock in list_stocks:
         get_data_success = True
         try:
-            yf_stock = yf.Ticker(stock)
+            session = requests_cache.CachedSession('yfinance.cache')
+            session.headers['User-agent'] = 'my-program/1.0'
+
+            yf_stock = yf.Ticker(stock, session=session)
+            time.sleep(10)
             try:
                 df.loc[stock, 'isin'] = yf_stock.isin
             except:
@@ -68,6 +75,8 @@ def refresh_database(input_file):
     list_df_result = []
     df = pd.read_csv(config.OUTPUT_DIR_RESULT + 'symbol_list_' + input_file + '.csv')
 
+    df = cross_check.cross_check_data(df)
+
     # DEBUG
     # df = df[:30]
 
@@ -83,4 +92,19 @@ def refresh_database(input_file):
 
     df_with_info.to_csv(config.OUTPUT_DIR_RESULT + input_file + '_with_info.csv')
     df_failed.to_csv(config.OUTPUT_DIR_RESULT + input_file + '_failed.csv')
+
+    df_with_info = cross_check.check_valid_data(df_with_info)
+    df_database = pd.read_csv(config.INPUT_FILE_IMPORTED_DATA)
+    list_df_result = [df_database, df_with_info]
+
+    df_with_info = pd.concat(list_df_result, axis=0, ignore_index=True)
+    df_with_info = df_with_info.sort_values(by=['symbol'], ascending=True)
+    df_with_info.reset_index(drop=True, inplace=True)
+    df_with_info = tools.clean_up_df_column(df_with_info)
+
+    df_with_info.to_csv(config.INPUT_FILE_IMPORTED_DATA)
+
+
+
+
 
