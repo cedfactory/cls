@@ -4,10 +4,10 @@ from manage_list import tools
 from init import config
 
 def cross_check_data(df):
+    len_symbols = len(df)
     df_database = pd.read_csv(config.INPUT_FILE_IMPORTED_DATA)
     list_data_symbols = df_database['symbol'].to_list()
     list_df_symbols = df['symbol'].to_list()
-
     df = df.set_index('symbol',drop=True)
 
     for ticker in list_data_symbols:
@@ -22,6 +22,9 @@ def cross_check_data(df):
     df.reset_index(drop=True, inplace=True)
     df = tools.move_column_position(df, 'symbol', 0)
     df = tools.clean_up_df_column(df)
+
+    print('-> already in database: ', len_symbols - len(df))
+    print('-> remaining symbols: ',len(df))
 
     return df
 
