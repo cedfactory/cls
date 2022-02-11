@@ -99,8 +99,11 @@ def refresh_database(input_file):
     list_df_result = [df_database, df_with_info]
 
     df_with_info = pd.concat(list_df_result, axis=0, ignore_index=True)
-    df_with_info = df_with_info.sort_values(by=['symbol'], ascending=True)
-    df_with_info.reset_index(drop=True, inplace=True)
+
+    # df_with_info = df_with_info.sort_values(by=['symbol'], ascending=True)
+    # df_with_info.reset_index(drop=True, inplace=True)
+
+    df_with_info = tools.drop_df_duplicates(df_with_info, 'symbol')
     df_with_info = tools.clean_up_df_column(df_with_info)
 
     df_with_info.to_csv(config.INPUT_FILE_IMPORTED_DATA)
