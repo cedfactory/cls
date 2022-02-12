@@ -92,7 +92,7 @@ def refresh_database(input_file):
     df_with_info = cross_check.check_valid_data(df_with_info)
     print('ADDITIONAL SYMBOL DATA: ',len(df_with_info))
 
-    tools.save_df_to_csv(df_with_info, config.OUTPUT_DIR_RESULT, input_file, 'additional_with_info.csv')
+    tools.save_df_to_csv(df_with_info, config.OUTPUT_DIR_RESULT, input_file, '_additional_with_info.csv')
     # tools.save_df_to_csv(df_failed, config.OUTPUT_DIR_RESULT, input_file, '_failed.csv')
 
     df_database = pd.read_csv(config.INPUT_FILE_IMPORTED_DATA)
