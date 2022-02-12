@@ -16,10 +16,6 @@ def fill_df(symbol_list_filename_in, symbol_list_filename_out):
     df = pd.read_csv(symbol_list_filename_in)
     df = df.set_index('symbol', drop=True)
     df = tools.clean_up_df_column(df)
-
-    # DEBUG
-    # df = df[:30]
-
     len_list = len(df)
 
     df_data = pd.read_csv(config.INPUT_FILE_IMPORTED_DATA)
