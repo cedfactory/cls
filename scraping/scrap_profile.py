@@ -93,13 +93,11 @@ def refresh_database(input_file):
     tools.save_df_to_csv(df_failed, config.OUTPUT_DIR_RESULT, input_file, '_failed.csv')
 
     df_with_info = cross_check.check_valid_data(df_with_info)
-    print('df_with_info: ',len(df_with_info))
+    print('ADDITIONAL SYMBOL DATA: ',len(df_with_info))
 
     df_database = pd.read_csv(config.INPUT_FILE_IMPORTED_DATA)
-    print('df_database: ', len(df_database))
-
     df_with_info = tools.concat_and_clean_df(df_database, df_with_info, 'symbol')
-    print('df_with_info + df_database: ', len(df_with_info))
+    print('DATABASE SIZE: ', len(df_with_info))
 
     df_with_info.to_csv(config.INPUT_FILE_IMPORTED_DATA)
 
