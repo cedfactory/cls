@@ -22,7 +22,7 @@ def get_info_list(df):
             session.headers['User-agent'] = 'my-program/1.0'
 
             yf_stock = yf.Ticker(stock, session=session)
-            time.sleep(5)
+            time.sleep(10)
             try:
                 df.loc[stock, 'isin'] = yf_stock.isin
             except:

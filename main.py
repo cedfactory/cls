@@ -1,7 +1,7 @@
 import sys
 import pandas as pd
 from init import config
-
+import time
 from manage_list import tools,list_manager
 from merging import merging_csv
 from compute_data import fill_df_data
@@ -58,4 +58,5 @@ if __name__ == '__main__':
             print('RUN: ', config.REFRESH_DATABASE_LOOP)
             config.REFRESH_DATABASE_LOOP = config.REFRESH_DATABASE_LOOP + 1
             scrap_profile.refresh_database(input_file)
+            time.sleep(60*30)
 
