@@ -37,6 +37,10 @@ def fill_df(symbol_list_filename_in, symbol_list_filename_out):
             df.drop(stock, inplace=True)
             list_stock_no_data.append(stock)
 
+    df['symbol'] = df.index
+    df.reset_index(drop=True, inplace=True)
+    df = tools.move_column_position(df, 'symbol', 0)
+
     empty_lst = [np.nan] * len(list_stock_no_data)
     df_no_data = scrap_wiki_list.make_df_stock_info(list_stock_no_data, empty_lst, empty_lst, empty_lst, empty_lst, empty_lst, empty_lst)
 

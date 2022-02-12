@@ -57,7 +57,6 @@ def set_euronext_data_symbol(df):
     df['newsymbol'].replace('', np.nan, inplace=True)
     df.dropna(subset=["newsymbol"], inplace=True)
 
-    # df['symbol'] = df.index
     df.reset_index(drop=True, inplace=True)
 
     first_column = df.pop('newsymbol')
