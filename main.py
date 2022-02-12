@@ -58,5 +58,5 @@ if __name__ == '__main__':
             print('RUN: ', config.REFRESH_DATABASE_LOOP)
             config.REFRESH_DATABASE_LOOP = config.REFRESH_DATABASE_LOOP + 1
             scrap_profile.refresh_database(input_file)
-            time.sleep(60*30)
-
+            if config.REFRESH_DATABASE_INFINITE_LOOP == False:
+                break
