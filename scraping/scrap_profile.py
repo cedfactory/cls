@@ -73,11 +73,7 @@ def get_info_multi_list(df):
 
 def refresh_database(input_file):
     df = pd.read_csv(config.OUTPUT_DIR_RESULT + 'symbol_list_' + input_file + '.csv')
-
     df = cross_check.cross_check_data(df)
-
-    # DEBUG
-    # df = df[:30]
 
     if (config.MULTITHREADING == True):
         global_split_list = tools.split_list_into_list(df, config.MULTITHREADING_NB_SPLIT_DF)
